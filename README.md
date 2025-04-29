@@ -104,6 +104,38 @@ PATCH /orders/:id/status – admin update status ({ status: pending|cancelled|co
 ##Database Seeding
 On first run, server.js will:
 
+##Project's structure
+```bash
+fitora-final-project-2025/
+├── frontend/
+│   ├── public/               # Static assets (e.g., images, icons)
+│   ├── src/
+│   │   ├── api/              # Axios instance and API service files
+│   │   ├── components/       # Reusable React components
+│   │   ├── context/          # Context providers for global state management
+│   │   ├── hooks/            # Custom React hooks
+│   │   ├── pages/            # Page components (e.g., Login, Menu, Cart)
+│   │   ├── App.jsx           # Main application component
+│   │   ├── main.jsx          # Entry point for the React app
+│   │   └── index.css         # Global styles
+│   ├── .gitignore            # Ignored files and directories for Git
+│   ├── package.json          # Frontend dependencies and scripts
+│   └── vite.config.js        # Vite configuration file
+├── backend/
+│   ├── config/               # Database and environment configuration
+│   ├── controllers/          # API controllers for handling requests
+│   ├── middleware/           # Middleware for authentication and authorization
+│   ├── models/               # Sequelize and Mongoose models
+│   ├── routes/               # API route definitions
+│   ├── server.js             # Main server file
+│   ├── .env                  # Environment variables
+│   ├── .gitignore            # Ignored files and directories for Git
+│   └── package.json          # Backend dependencies and scripts
+├── README.md                 # Project documentation
+└── .gitignore                # Root-level Git ignore file
+
+```
+
 Create an initial admin user (admin@fitora.com / bcrypt-hashed password)
 
 Seed 15 random menu items using Faker
