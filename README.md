@@ -39,7 +39,7 @@ A full-stack restaurant ordering application that lets customers register, log i
 git clone https://github.com/<your-username>/fitora.git
 cd fitora
 
-
+```
 ### Backend Setup
 ```bash
 cd backend
@@ -47,10 +47,11 @@ npm install
 cp .env.example .env
 # Edit .env to set your JWT_SECRET and (optionally) MySQL creds
 npm run dev
-
+```
 ##Frontend setup
+```bash
 cd frontend
 npm install
 npm run dev
-
+```
 
