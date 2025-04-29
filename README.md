@@ -54,4 +54,58 @@ cd frontend
 npm install
 npm run dev
 ```
+Backend → http://localhost:4000
+Frontend → http://localhost:5173
 
+Environment Variables
+Copy backend/.env.example to .env and configure:
+
+```bash
+PORT=4000
+
+# Choose sqlite or mysql
+DB_DIALECT=sqlite
+DB_STORAGE=./dev.sqlite
+# DB_HOST=localhost
+# DB_NAME=fitora_db
+# DB_USER=fitora_user
+# DB_PASS=StrongPass123
+
+JWT_SECRET=your_long_random_secret
+```
+#API Endpoints
+##Auth
+POST /auth/register – Register new user
+
+POST /auth/login – Login user (returns JWT)
+
+##Foods
+GET /foods – List all menu items
+
+GET /foods/:id – Get one item
+
+POST /foods – admin create item
+
+PUT /foods/:id – admin update item
+
+DELETE /foods/:id – admin delete item
+
+##Orders
+GET /orders – List your orders
+
+GET /orders/:id – Get order details
+
+POST /orders – Place new order (body: { items: [{ id, quantity }] })
+
+DELETE /orders/:id – Cancel your pending order
+
+PATCH /orders/:id/status – admin update status ({ status: pending|cancelled|completed })
+
+##Database Seeding
+On first run, server.js will:
+
+Create an initial admin user (admin@fitora.com / bcrypt-hashed password)
+
+Seed 15 random menu items using Faker
+
+Check console logs for “Seeding random menu items…” and “Seeded admin user”.
